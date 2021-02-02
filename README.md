@@ -1,34 +1,29 @@
-# *DEPRECATED*
-
-Please use https://github.com/ethcore/parity/tree/master/ethkey
-
-
-# ethkey
+# vapkey
 
 [![Build Status][travis-image]][travis-url]
 
-[travis-image]: https://travis-ci.org/ethcore/ethkey.svg?branch=master
-[travis-url]: https://travis-ci.org/ethcore/ethkey
+[travis-image]: https://travis-ci.org/tetcoin/vapkey.svg?branch=master
+[travis-url]: https://travis-ci.org/tetcoin/vapkey
 
-Ethereum keys generator.
+Vapory keys generator.
 
-[Documentation](http://ethcore.github.io/ethkey/ethkey/index.html)
+[Documentation](http://tetcoin.github.io/vapkey/vapkey/index.html)
 
 ### Usage
 
 ```
-Ethereum keys generator.
+Vapory keys generator.
   Copyright 2016 Ethcore (UK) Limited
 
 Usage:
-    ethkey info <secret> [options]
-    ethkey generate random [options]
-    ethkey generate prefix <prefix> <iterations> [options]
-    ethkey generate brain <seed> [options]
-    ethkey sign <secret> <message>
-    ethkey verify public <public> <signature> <message>
-    ethkey verify address <address> <signature> <message>
-    ethkey [-h | --help]
+    vapkey info <secret> [options]
+    vapkey generate random [options]
+    vapkey generate prefix <prefix> <iterations> [options]
+    vapkey generate brain <seed> [options]
+    vapkey sign <secret> <message>
+    vapkey verify public <public> <signature> <message>
+    vapkey verify address <address> <signature> <message>
+    vapkey [-h | --help]
 
 Options:
     -h, --help         Display this message and exit.
@@ -38,7 +33,7 @@ Options:
 
 Commands:
     info               Display public and address of the secret.
-    generate           Generates new ethereum key.
+    generate           Generates new vapory key.
     random             Random generation.
     prefix             Random generation, but address must start with a prefix
     brain              Generate new key from string seed.
@@ -51,10 +46,10 @@ Commands:
 #### `info <secret>`
 *Display info about private key.*
 
-- `<secret>` - ethereum secret, 32 bytes long
+- `<secret>` - vapory secret, 32 bytes long
 
 ```
-ethkey info 17d08f5fe8c77af811caa0c9a187e668ce3b74a99acc3f6d976f075fa8e0be55
+vapkey info 17d08f5fe8c77af811caa0c9a187e668ce3b74a99acc3f6d976f075fa8e0be55
 ```
 
 ```
@@ -72,7 +67,7 @@ address: 26d1ec50b4e62c1d1a40d16e7cacc6a6580757d5
 
 
 ```
-ethkey generate brain "this is sparta"
+vapkey generate brain "this is sparta"
 ```
 
 ```
@@ -87,7 +82,7 @@ address: 26d1ec50b4e62c1d1a40d16e7cacc6a6580757d5
 *Generate new keypair randomly.*
 
 ```
-ethkey generate random
+vapkey generate random
 ```
 
 ```
@@ -105,7 +100,7 @@ address: a8fa5dd30a87bb9e3288d604eb74949c515ab66e
 - `<iterations>` - maximum number of tries before generation is assumed to be a failure.
 
 ```
-ethkey generate prefix ff 1000
+vapkey generate prefix ff 1000
 ```
 
 ```
@@ -123,7 +118,7 @@ address: fff7e25dff2aa60f61f9d98130c8646a01f31649
 - `<message>` - message to sign, 32 bytes long
 
 ```
-ethkey sign 17d08f5fe8c77af811caa0c9a187e668ce3b74a99acc3f6d976f075fa8e0be55 bd50b7370c3f96733b31744c6c45079e7ae6c8d299613246d28ebcef507ec987
+vapkey sign 17d08f5fe8c77af811caa0c9a187e668ce3b74a99acc3f6d976f075fa8e0be55 bd50b7370c3f96733b31744c6c45079e7ae6c8d299613246d28ebcef507ec987
 ```
 
 ```
@@ -140,7 +135,7 @@ c1878cf60417151c766a712653d26ef350c8c75393458b7a9be715f053215af63dfd3b02c2ae65a8
 - `<message>` - message, 32 bytes long
 
 ```
-ethkey verify public 689268c0ff57a20cd299fa60d3fb374862aff565b20b5f1767906a99e6e09f3ff04ca2b2a5cd22f62941db103c0356df1a8ed20ce322cab2483db67685afd124 c1878cf60417151c766a712653d26ef350c8c75393458b7a9be715f053215af63dfd3b02c2ae65a8677917a8efa3172acb71cb90196e42106953ea0363c5aaf200 bd50b7370c3f96733b31744c6c45079e7ae6c8d299613246d28ebcef507ec987
+vapkey verify public 689268c0ff57a20cd299fa60d3fb374862aff565b20b5f1767906a99e6e09f3ff04ca2b2a5cd22f62941db103c0356df1a8ed20ce322cab2483db67685afd124 c1878cf60417151c766a712653d26ef350c8c75393458b7a9be715f053215af63dfd3b02c2ae65a8677917a8efa3172acb71cb90196e42106953ea0363c5aaf200 bd50b7370c3f96733b31744c6c45079e7ae6c8d299613246d28ebcef507ec987
 ```
 
 ```
@@ -157,7 +152,7 @@ true
 - `<message>` - message, 32 bytes long
 
 ```
-ethkey verify address 689268c0ff57a20cd299fa60d3fb374862aff565b20b5f1767906a99e6e09f3ff04ca2b2a5cd22f62941db103c0356df1a8ed20ce322cab2483db67685afd124 c1878cf60417151c766a712653d26ef350c8c75393458b7a9be715f053215af63dfd3b02c2ae65a8677917a8efa3172acb71cb90196e42106953ea0363c5aaf200 bd50b7370c3f96733b31744c6c45079e7ae6c8d299613246d28ebcef507ec987
+vapkey verify address 689268c0ff57a20cd299fa60d3fb374862aff565b20b5f1767906a99e6e09f3ff04ca2b2a5cd22f62941db103c0356df1a8ed20ce322cab2483db67685afd124 c1878cf60417151c766a712653d26ef350c8c75393458b7a9be715f053215af63dfd3b02c2ae65a8677917a8efa3172acb71cb90196e42106953ea0363c5aaf200 bd50b7370c3f96733b31744c6c45079e7ae6c8d299613246d28ebcef507ec987
 ```
 
 ```
@@ -165,9 +160,9 @@ true
 ```
 
 
-# Ethcore toolchain
-*this project is a part of the ethcore toolchain*
+# Tetsy toolchain
+*this project is a part of the tetsy toolchain*
 
-- [**ethkey**](https://github.com/ethcore/ethkey) - Ethereum keys generator and signer.
-- [**ethstore**](https://github.com/ethcore/ethstore) - Ethereum key management.
-- [**ethabi**](https://github.com/ethcore/ethabi) - Ethereum function calls encoding.
+- [**vapkey**](https://github.com/tetcoin/ethkey) - Vapory keys generator and signer.
+- [**vapstore**](https://github.com/tetcoin/ethstore) - Vapory key management.
+- [**vapabi**](https://github.com/tetcoin/ethabi) - Vapory function calls encoding.
